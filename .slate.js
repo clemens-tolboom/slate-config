@@ -22,7 +22,7 @@ var pushBottomLeft = slate.operation("move", {
   "width" : "screenSizeX/3",
   "height" : "screenSizeY/3"
 });
-var pushBottomLeft2 = slate.operation("move", {
+var pushBottomLeft3 = slate.operation("move", {
   "x" : "screenOriginX",
   "y" : "screenSizeY/3",
   "width" : "screenSizeX/3*2",
@@ -34,7 +34,7 @@ var pushBottom = slate.operation("push", {
   "direction" : "bottom",
   "style" : "bar-resize:screenSizeY/3"
 });
-var pushBottom2 = slate.operation("push", {
+var pushBottom3 = slate.operation("push", {
   "direction" : "bottom",
   "style" : "bar-resize:screenSizeY/3*2"
 });
@@ -46,7 +46,7 @@ var pushBottomRight = slate.operation("move", {
   "width" : "screenSizeX/3",
   "height" : "screenSizeY/3"
 });
-var pushBottomRight2 = slate.operation("move", {
+var pushBottomRight3 = slate.operation("move", {
   "x" : "screenSizeX/3",
   "y" : "screenSizeY/3",
   "width" : "screenSizeX/3*2",
@@ -60,6 +60,10 @@ var pushLeft = slate.operation("push", {
 });
 var pushLeft2 = slate.operation("push", {
   "direction" : "left",
+  "style" : "bar-resize:screenSizeX/2"
+});
+var pushLeft3 = slate.operation("push", {
+  "direction" : "left",
   "style" : "bar-resize:screenSizeX/3*2"
 });
 
@@ -70,7 +74,7 @@ var pushCenter = slate.operation("move", {
   "width" : "screenSizeX/3",
   "height" : "screenSizeY/3"
 });
-var pushCenter2 = slate.operation("move", {
+var pushCenter3 = slate.operation("move", {
   "x" : "screenSizeX/6",
   "y" : "screenSizeY/6",
   "width" : "screenSizeX/3*2",
@@ -84,6 +88,10 @@ var pushRight = slate.operation("push", {
 });
 var pushRight2 = slate.operation("push", {
   "direction" : "right",
+  "style" : "bar-resize:screenSizeX/2"
+});
+var pushRight3 = slate.operation("push", {
+  "direction" : "right",
   "style" : "bar-resize:screenSizeX/3*2"
 });
 
@@ -94,20 +102,19 @@ var pushTopLeft = slate.operation("move", {
   "width" : "screenSizeX/3",
   "height" : "screenSizeY/3"
 });
-var pushTopLeft2 = slate.operation("move", {
+var pushTopLeft3 = slate.operation("move", {
   "x" : "screenOriginX",
   "y" : "screenOriginY",
   "width" : "screenSizeX * 2 / 3",
   "height" : "screenSizeY * 2 / 3"
 });
 
-
 // 8
 var pushTop = slate.operation("push", {
   "direction" : "top",
   "style" : "bar-resize:screenSizeY/3"
 });
-var pushTop2 = slate.operation("push", {
+var pushTop3 = slate.operation("push", {
   "direction" : "top",
   "style" : "bar-resize:screenSizeY/3*2"
 });
@@ -119,7 +126,7 @@ var pushTopRight = slate.operation("move", {
   "width" : "screenSizeX/3",
   "height" : "screenSizeY/3"
 });
-var pushTopRight2 = slate.operation("move", {
+var pushTopRight3 = slate.operation("move", {
   "x" : "screenSizeX/3",
   "y" : "screenOriginX",
   "width" : "screenSizeX/3*2",
@@ -135,7 +142,7 @@ slate.bind("pad1:ctrl", function(win) {
     win.doOperation(pushBottomLeft);
 });
 slate.bind("pad1:shift,ctrl", function(win) {
-    win.doOperation(pushBottomLeft2);
+    win.doOperation(pushBottomLeft3);
 });
 
 // 2
@@ -143,7 +150,7 @@ slate.bind("pad2:ctrl", function(win) {
     win.doOperation(pushBottom);
 });
 slate.bind("pad2:shift,ctrl", function(win) {
-    win.doOperation(pushBottom2);
+    win.doOperation(pushBottom3);
 });
 
 // 3
@@ -151,7 +158,7 @@ slate.bind("pad3:ctrl", function(win) {
     win.doOperation(pushBottomRight);
 });
 slate.bind("pad3:shift,ctrl", function(win) {
-    win.doOperation(pushBottomRight2);
+    win.doOperation(pushBottomRight3);
 });
 
 // 4
@@ -161,13 +168,16 @@ slate.bind("pad4:ctrl", function(win) {
 slate.bind("pad4:shift,ctrl", function(win) {
     win.doOperation(pushLeft2);
 });
+slate.bind("pad4:shift,ctrl,alt", function(win) {
+    win.doOperation(pushLeft3);
+});
 
 // 5
 slate.bind("pad5:ctrl", function(win) {
   win.doOperation(pushCenter);
 });
 slate.bind("pad5:shift,ctrl", function(win) {
-  win.doOperation(pushCenter2);
+  win.doOperation(pushCenter3);
 });
 
 // 6
@@ -177,13 +187,16 @@ slate.bind("pad6:ctrl", function(win) {
 slate.bind("pad6:shift,ctrl", function(win) {
     win.doOperation(pushRight2);
 });
+slate.bind("pad6:shift,ctrl,alt", function(win) {
+    win.doOperation(pushRight3);
+});
 
 // 7
 slate.bind("pad7:ctrl", function(win) {
     win.doOperation(pushTopLeft);
 });
 slate.bind("pad7:shift,ctrl", function(win) {
-    win.doOperation(pushTopLeft2);
+    win.doOperation(pushTopLeft3);
 });
 
 // 8
@@ -191,7 +204,7 @@ slate.bind("pad8:ctrl", function(win) {
     win.doOperation(pushTop);
 });
 slate.bind("pad8:shift,ctrl", function(win) {
-    win.doOperation(pushTop2);
+    win.doOperation(pushTop3);
 });
 
 // 9
@@ -199,7 +212,7 @@ slate.bind("pad9:ctrl", function(win) {
     win.doOperation(pushTopRight);
 });
 slate.bind("pad9:shift,ctrl", function(win) {
-    win.doOperation(pushTopRight2);
+    win.doOperation(pushTopRight3);
 });
 
 
@@ -210,7 +223,7 @@ slate.configAll({
   "focusCheckWidthMax": 3000,
 });
 
-// Thunderbolt 
+// Thunderbolt
 var monitors = {
   'thunderbolt': {
     'screen': "2560x1440",
